@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style media="screen">
+    body{
+      font-size: 16px;
+    }
+    code {
+      font-family: monospace;
+      background: rgb(220,220,220);
+      border-style: solid;
+      border-width: 1px;
+      border-color: rgb(200,200,200);
+      border-radius: 2px;
+    }
+      .container {
+        text-align: center;
+      }
+      .case-3 {
+        width: 100%;
+      }
+      @media screen and (max-width: 760px) {
+          .case-3 {
+            width: 50vw;
+          }
+      }
+      @media screen and (min-width:640px) {
+        body {
+          font-size: 18px;
+        }
+
+      }
+  </style>
+    <title>Playing with Source set, Sizes attribute and Descripters </title>
+  </head>
+  <body>
+    <!-- Case 1  -->
+    <!-- <img src="images/2560.jpg" srcset="images/2560.jpg 2560w, images/1280.jpg 1280w, images/640.jpg 640w, images/320.jpg 320w" alt="Air Plane"> -->
+
+    <!-- Case 2  -->
+    <!-- <img src="images/2560_2x.jpg" srcset="images/2560_2x.jpg 2X, images/1280_1x.jpg 1x" style="width:100%" alt="Air Plane"> -->
+
+    <!--Case 3  -->
+    <!-- <section class="container">
+      <img src="images/2560.jpg" srcset="images/2560.jpg 2560w, images/1280.jpg 1280w, images/640.jpg 640w, images/320.jpg 320w" sizes="(max-width: 760px) 50vw, 100vw" alt="Air Plane" class="case-3">
+    </section> -->
+
+    <!-- Case 4 -->
+    <!-- <picture>
+      <source srcset="images/webp/2560.webp 2x, images/webp/1280.webp 1x" type="image/webp">
+      <source srcset="images/2560.jpg 2x, images/1280.jpg 1x" type="image/jpeg">
+      <img src="2560.jpg" alt="air plane" width="100%">
+    </picture> -->
+
+    <!-- Case 5 -->
+
+    <!-- <picture>
+      <source media="(min-width: 1000px)" srcset="images/2560_2x.jpg 2x, images/1280_1x.jpg 1x">
+      <source media="(min-width: 600px)" srcset="images/1280.jpg 1280w, images/640.jpg 640w">
+      <source media="(min-width: 300px)" srcset="images/640.jpg 640w, images/320.jpg 320w">
+      <img src="images/320.jpg" alt="Air Plane" style="width:100%">
+    </picture> -->
+
+    <!-- <p>Case-5: it is recommended to use <code>picture</code> element when we are doing art derection
+    or want provide diffrent formats. It is not recommended for resolution switchin case.</p>
+    <p>Check these articles <a href="https://cloudfour.com/thinks/dont-use-picture-most-of-the-time/">here</a>
+    and <a href="https://css-tricks.com/responsive-images-youre-just-changing-resolutions-use-srcset/">here</a></p> -->
+
+    <!-- I could have added 1x 2x descripter in the code below but just to avoid having new files
+    in our images folder i used 1280 and 640 images, we could have done it other way too  -->
+    <!--provinding
+      a default image and also covering the veiwport less than 300px, I could have provied 1280 or 2560
+      but that would be just the waste of bandwidth for those small viewport mobiles and for those old
+      browsers :P -->
+    <!-- case-5 ends here -->
+
+    <!-- Case 6 -->
+
+
+    <picture>
+      <source media="(min-width: 1000px)" srcset="images/webp/2560.webp 2x, images/webp/1280.webp 1x" type="image/webp">
+      <source media="(min-width: 1000px)" srcset="images/2560_2x.jpg 2x, images/1280_1x.jpg 1x" type="image/jpeg">
+      <source media="(min-width: 600px)" srcset="images/webp/1280.webp 1280w, images/webp/640.webp 640w" type="image/webp">
+      <source media="(min-width: 600px)" srcset="images/1280.jpg 1280w, images/640.jpg 640w" type="image/jpeg">
+      <source media="(min-width: 300px)" srcset="images/webp/640.webp 640w, images/webp/320.webp 320w" type="image/webp">
+      <source media="(min-width: 300px)" srcset="images/640.jpg 640w, images/320.jpg 320w" type="image/jpeg">
+      <img src="images/320.jpg" alt="Air Plane" style="width:100%">
+    </picture>
+
+
+  </body>
+</html>
